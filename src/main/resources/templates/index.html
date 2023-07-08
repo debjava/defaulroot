@@ -1,0 +1,161 @@
+<h1>Basic Application Information</h1>
+<style>
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: linear-gradient(45deg, #49a09d, #5f2c82);
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+table {
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+
+thead {
+	th {
+		background-color: #55608f;
+	}
+}
+
+tbody {
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
+}
+</style>
+
+<form action="#" th:action="@{/saveControls}" th:object="${infoModel}" method="get" enctype="multipart/form-data" >
+
+<!-- 
+    <table border="1">
+    	<th>Name</th>
+    	<th>Details</th>
+        <tr>
+            <td>Profile Name</td>
+            <td><span th:text="${infoModel.profileName}"></span></td>
+        </tr>
+        <tr>
+            <td>Application Name</td>
+            <td><span th:text="${infoModel.appName}"></span></td>
+        </tr>
+    </table>
+    Current Profile Name: <span th:text="${infoModel.profileName}"></span>
+    Current App Name: <span th:text="${infoModel.appName}"></span>
+    ASDF: th:text="${infoModel.profileName}"
+    Application Name: "${infoModel.appName}"
+    profileName: <h4>${infoModel.profileName}</h4>
+    profileName: th:field="${infoModel.profileName}"
+     -->
+    
+    <!-- <span>Full name:</span><span th:text="${user.profileName}"></span><br/> -->
+    
+    
+    <div class="container">
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Current Profile Name</td>
+				<td><span th:text="${infoModel.profileName}"></td>
+			</tr>
+			<tr>
+				<td>Current Application Name</td>
+				<td><strong><span th:text="${infoModel.appName}"></span></strong></td>
+			</tr>
+			<tr>
+				<td>Current Application Version</td>
+				<td><span th:text="${infoModel.appVersion}"></td>
+			</tr>
+			<tr>
+				<td>Current Java Version</td>
+				<td><span th:text="${infoModel.javaVersion}"></td>
+			</tr>
+			<tr>
+				<td>Current Spring Version</td>
+				<td><span th:text="${infoModel.springVersion}"></td>
+			</tr>
+			<tr>
+				<td>Current Time</td>
+				<td><span th:text="${infoModel.dateStr}"></td>
+			</tr>
+			<!-- <tr>
+				<td>Cell 1</td>
+				<td>Cell 2</td>
+				<td>Cell 3</td>
+				<td>Cell 4</td>
+				<td>Cell 5</td>
+			</tr>
+			<tr>
+				<td>Cell 1</td>
+				<td>Cell 2</td>
+				<td>Cell 3</td>
+				<td>Cell 4</td>
+				<td>Cell 5</td>
+			</tr>
+			<tr>
+				<td>Cell 1</td>
+				<td>Cell 2</td>
+				<td>Cell 3</td>
+				<td>Cell 4</td>
+				<td>Cell 5</td>
+			</tr>
+			<tr>
+				<td>Cell 1</td>
+				<td>Cell 2</td>
+				<td>Cell 3</td>
+				<td>Cell 4</td>
+				<td>Cell 5</td>
+			</tr> -->
+		</tbody>
+	</table>
+</div>
+    
+</form>
